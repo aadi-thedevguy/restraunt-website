@@ -6,11 +6,13 @@ import { useContext } from 'react';
 const MealItemForm = (props) => {
   const cartCtx = useContext(CartContext)
 
+  let quantity = 0
   const addItemtoCart = (e) => {
     e.preventDefault()
-    const quantity = document.getElementById('amount_' + props.id).value
+    let product = JSON.parse(JSON.stringify( props))
+    quantity = Number(document.getElementById('amount_' + props.id).value)
+    cartCtx.addItem(product, quantity)
     
-    cartCtx.addItem({...props.item, quantity})
   }
 
   return (
