@@ -10,8 +10,7 @@ const Cart = (props) => {
   let amount = 0
   cartCtx.items.forEach(item => {
     if (item.quantity) {
-
-      amount = amount + (item.item.price * item.quantity)
+      amount = amount + (item.price * item.quantity)
     }
   })
 
@@ -20,11 +19,11 @@ const Cart = (props) => {
       {cartCtx.items
         .map((item) => (
           <CartItem
-            key={item.item.id}
-            id={item.item.id}
-            name={item.item.name}
+            key={item.id}
+            id={item.id}
+            name={item.name}
             amount={item.quantity}
-            price={item.item.price}
+            price={item.price}
           />
         ))}
     </ul>

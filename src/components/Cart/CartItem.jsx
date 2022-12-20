@@ -8,7 +8,6 @@ const CartItem = (props) => {
   const cartCtx = useContext(CartContext)
 
   const onRemove = () => cartCtx.removeItem(props.id)
-//   console.log(cartCtx.items)
 
   return (
     <li className={classes['cart-item']}>

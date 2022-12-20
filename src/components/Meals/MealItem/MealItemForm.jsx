@@ -9,9 +9,8 @@ const MealItemForm = (props) => {
   let quantity = 0
   const addItemtoCart = (e) => {
     e.preventDefault()
-    let product = JSON.parse(JSON.stringify( props))
     quantity = Number(document.getElementById('amount_' + props.id).value)
-    cartCtx.addItem(product, quantity)
+    cartCtx.addItem(props.item, quantity)
     
   }
 
